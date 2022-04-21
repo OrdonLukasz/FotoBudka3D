@@ -10,7 +10,7 @@ public class ScreenShotController : MonoBehaviour
     [SerializeField] private int resWidth = 1920;
     [SerializeField] private int resHeight = 1080;
 
-    [SerializeField] Button buttonTakePhoto;
+    [SerializeField] private Button buttonTakePhoto;
     [SerializeField] private Camera screenShotCamera;
    
     private int screenShotSessionFileIndex;
