@@ -9,14 +9,14 @@ using TMPro;
 public class PhotoBoothController : MonoBehaviour
 {
     [SerializeField] private float rotationSpeed;
-    [SerializeField] Camera mainCamera;
-    [SerializeField] Button buttonPreviousObject;
-    [SerializeField] Button buttonNextObject;
-    [SerializeField] Button buttonShowOutputPath;
-    [SerializeField] Button buttonShowInputPath;
-
-    private GameObject loadedObject;
+    [SerializeField] private Camera mainCamera;
+    [SerializeField] private Button buttonPreviousObject;
+    [SerializeField] private Button buttonNextObject;
+    [SerializeField] private Button buttonShowOutputPath;
+    [SerializeField] private Button buttonShowInputPath;
     [SerializeField] private List<GameObject> loadedObjects = new List<GameObject>();
+    
+    private GameObject loadedObject;
     private int currentIndex = 0;
 
     private void Start()
@@ -25,15 +25,15 @@ public class PhotoBoothController : MonoBehaviour
         LoadMesh();
     }
 
-    void OnApplicationFocus()
-    {
-        LoadMesh();
-    }
-
     private void Update()
     {
         DragToRotate();
         CameraScrollZoom();
+    }
+    
+    private void OnApplicationFocus()
+    {
+        LoadMesh();
     }
 
     private void AddListeners()
